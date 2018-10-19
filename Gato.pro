@@ -26,14 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    gato.cpp \
-    frame.cpp
+    gato.cpp
 
 HEADERS += \
         mainwindow.h \
-    gato.h \
-    frame.h
+    gato.h
 
 FORMS += \
-        mainwindow.ui \
-    frame.ui
+        mainwindow.ui
