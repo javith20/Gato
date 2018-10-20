@@ -13,6 +13,7 @@ class Gato
 public:
     Gato();
     int minimax(int board[3][3], int player,char figura);
+    int minimax2(int depth, bool isMax, char figura);
     void setPos(int fila,int columna);
     void setPos(int fila,int columna, char figura);
     int getPos(int fila,int columna);
@@ -32,6 +33,8 @@ public:
     bool getVsCPU();
     void setVsCPU(bool estado);
     int revisarGanador(char figura);
+    int evaluarGanarCompleto(char figura);
+    bool quedanMovimientos();
     void movimientoComputador(char figura);
     void comenzarJuego();
 
