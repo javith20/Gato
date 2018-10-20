@@ -234,8 +234,6 @@ void MainWindow::on_radioButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    //QString X = 'X';
-    //QString O = 'O';
     tablero.movimientoComputador(tablero.getJugador2());
     int pos1 = tablero.getMovimientoComputador(0);
     int pos2 = tablero.getMovimientoComputador(1);
