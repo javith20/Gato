@@ -214,11 +214,6 @@ void MainWindow::on_iniciarButton_clicked()
     tablero.setJugador2Figura('O');
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-
-}
-
 void MainWindow::on_radioButton_clicked()
 {
     if(!tablero.getVsCPU()){

@@ -6,12 +6,81 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>419</width>
-    <height>547</height>
+    <width>421</width>
+    <height>511</height>
    </rect>
   </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>184</red>
+        <green>197</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>184</red>
+        <green>197</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>184</red>
+        <green>197</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>184</red>
+        <green>197</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Tic Tac Toe C++</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icono.jpg</normalon>
+   </iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="posCeroCero">
@@ -277,29 +346,38 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>10</y>
-      <width>51</width>
-      <height>21</height>
+      <x>180</x>
+      <y>0</y>
+      <width>71</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <family>Poor Richard</family>
+      <pointsize>16</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
-     <string>Gato</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Gato&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="iniciarButton">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>210</x>
       <y>430</y>
       <width>75</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poor Richard</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Iniciar</string>
@@ -310,9 +388,15 @@
      <rect>
       <x>10</x>
       <y>430</y>
-      <width>151</width>
+      <width>171</width>
       <height>18</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poor Richard</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Jugar contra la máquina</string>
@@ -321,14 +405,14 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>430</y>
-      <width>75</width>
-      <height>23</height>
+      <x>390</x>
+      <y>470</y>
+      <width>16</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Listo -&gt;</string>
+     <string/>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_2">
@@ -342,6 +426,12 @@
       <width>131</width>
       <height>18</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poor Richard</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Jugador 1</string>
@@ -359,34 +449,35 @@
       <height>18</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Poor Richard</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Jugador 2</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>419</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuGato">
-    <property name="title">
-     <string>Acerca de</string>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>450</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poor Richard</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>PC</string>
     </property>
    </widget>
-   <addaction name="menuGato"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
