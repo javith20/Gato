@@ -21,6 +21,7 @@ public:
     bool isLlenoHorizontal(char figura);
     bool isLlenoVertical(char figura);
     bool isLlenoDiagonal(char figura);
+    void setMovimientoComputador(int pos, int movimiento);
     int getMovimientoComputador(int pos);
     char getJugador1();
     char getJugador2();

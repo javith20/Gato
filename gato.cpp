@@ -14,14 +14,14 @@ int Gato::minimax(int board[3][3], int player, char figura) {
     int ganador = revisarGanador(figura); //'X'provicional
     if(ganador != 0)
         return ganador*player;
-    int movimiento = -1;
-    int puntuacion = -2;//Movimientos donde se pierde, es mejor no mover :p
+    int movimiento = 0;
+    int puntuacion = -1;//Movimientos donde se pierde, es mejor no mover :p
     int i,j;
     for(i = 0; i < 3; ++i) {       //Para los movimientos
         for(j = 0; j < 3; ++j){
             if(board[i][j] == 0) {     //Si está vacío
-                board[i][j] = player;  //Intenta el movimiento
-                int thisPuntuacion = - (minimax(board, player*-1,figura));
+                board[i][j] = 1;  //Intenta el movimiento
+                int thisPuntuacion = -(minimax(board, player*-1,figura));
                 if(thisPuntuacion > puntuacion) {
                     puntuacion = thisPuntuacion;
                     movimiento = i;
@@ -122,15 +122,15 @@ int Gato::minimax2(int depth, bool isMax, char figura)
 }
 
 void Gato::movimientoComputador(char figura) {
-    int movimiento = -1;
-    int movimiento2 = -1;
-    int puntuacion = -2;
+    int movimiento = 0;
+    int movimiento2 = 0;
+    int puntuacion = -1;
     int i,j;
     for(i = 0; i < 3; ++i) {
         for(j = 0; j < 3; ++j){
             if(this->Matriz[i][j] == 0) {
                 this->Matriz[i][j] = 1;
-                int tempPuntuacion = minimax2(0, false, figura);
+                int tempPuntuacion = minimax(Matriz, 1, figura);
                 this->Matriz[i][j] = 0;
                 if(tempPuntuacion > puntuacion) {
                     puntuacion = tempPuntuacion;
@@ -143,8 +143,12 @@ void Gato::movimientoComputador(char figura) {
     }
     //Retorna el movimiento basado en el árbol minimax a un nodo
     //this->Matriz[movimiento][movimiento2] = 1;
-    this->movimientoPC[0] = movimiento;
-    this->movimientoPC[1] = movimiento2;
+    setMovimientoComputador(0, movimiento);
+    setMovimientoComputador(1, movimiento2);
+}
+
+void Gato::setMovimientoComputador(int pos, int movimiento){
+    movimientoPC[pos] = movimiento;
 }
 
 int Gato::getMovimientoComputador(int pos){
