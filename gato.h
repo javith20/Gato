@@ -19,8 +19,9 @@ public:
     void setPos(int pos, int figura);
     char getJugador1();
     char getJugador2();
-    char getJugador1Turno();
-    char getJugador2Turno();
+    bool getJugador1Turno();
+    bool getJugador2Turno();
+    char getJugadorEnTurnoAnterior();
     void setJugador1(bool enTurno);
     void setJugador2(bool enTurno);
     void setJugador1Figura(char figura);

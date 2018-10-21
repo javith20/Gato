@@ -74,13 +74,21 @@ char Gato::getJugador2(){
     return this->jugador2.simbolo;
 }
 
-char Gato::getJugador1Turno(){
+bool Gato::getJugador1Turno(){
     return this->jugador1.turno;
 }
 
-char Gato::getJugador2Turno(){
+bool Gato::getJugador2Turno(){
     return this->jugador2.turno;
 }
+
+char Gato::getJugadorEnTurnoAnterior(){
+    if(!this->jugador1.turno)
+        return this->jugador1.simbolo;
+    else if(!this->jugador2.turno)
+        return this->jugador2.simbolo;
+}
+
 
 void Gato::setJugador1(bool enTurno){
     this->jugador1.turno = enTurno;
