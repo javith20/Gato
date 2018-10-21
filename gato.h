@@ -12,17 +12,11 @@ class Gato
 
 public:
     Gato();
-    int minimax(int board[3][3], int player,char figura);
-    int minimax2(int depth, bool isMax, char figura);
-    void setPos(int fila,int columna);
-    void setPos(int fila,int columna, char figura);
-    int getPos(int fila,int columna);
-    char getPosFigura(int fila,int columna);
-    bool isLlenoHorizontal(char figura);
-    bool isLlenoVertical(char figura);
-    bool isLlenoDiagonal(char figura);
-    void setMovimientoComputador(int pos, int movimiento);
-    int getMovimientoComputador(int pos);
+    int revisarGanador();
+    int minimax( int player);
+    int computadoraMueve();
+    char getPos();
+    void setPos(int pos, int figura);
     char getJugador1();
     char getJugador2();
     char getJugador1Turno();
@@ -33,16 +27,11 @@ public:
     void setJugador2Figura(char figura);
     bool getVsCPU();
     void setVsCPU(bool estado);
-    int revisarGanador(char figura);
-    int evaluarGanarCompleto(char figura);
-    bool quedanMovimientos();
-    void movimientoComputador(char figura);
-    void comenzarJuego();
+
 
 private:
-    int Matriz[3][3]={{0,0,0},{0,0,0},{0,0,0}};
-    char MatrizSimbolos[3][3]={{'0','0','0'},{'0','0','0'},{'0','0','0'}};
     int movimientoPC[2]={0,0};
+    int tablero[9]={0};
     bool VsCPU = false;
 };
 

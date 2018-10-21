@@ -17,9 +17,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_posCeroCero_clicked()
 {
-    tablero.setPos(0,0);
     if(tablero.getJugador1Turno()){
-        tablero.setPos(0,0,'X');
+        tablero.setPos(0,-1);
         QString ceroCero = "X";
         ui->posCeroCero->setText(ceroCero);
         tablero.setJugador1(false);
@@ -27,7 +26,7 @@ void MainWindow::on_posCeroCero_clicked()
         //ui->posCeroCero->setDisabled();
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(0,0,'O');
+        tablero.setPos(0,1);
         QString ceroCero = "O";
         ui->posCeroCero->setText(ceroCero);
         tablero.setJugador2(false);
@@ -38,14 +37,14 @@ void MainWindow::on_posCeroCero_clicked()
 void MainWindow::on_posCeroUno_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(0,1,'X');
+        tablero.setPos(1,-1);
         QString ceroUno = "X";
         ui->posCeroUno->setText(ceroUno);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(0,1,'O');
+        tablero.setPos(1,1);
         QString ceroUno = "O";
         ui->posCeroUno->setText(ceroUno);
         tablero.setJugador1(true);
@@ -56,14 +55,14 @@ void MainWindow::on_posCeroUno_clicked()
 void MainWindow::on_posCeroDos_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(0,2,'X');
+        tablero.setPos(2,-1);
         QString ceroDos = "X";
         ui->posCeroDos->setText(ceroDos);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(0,2,'O');
+        tablero.setPos(2,1);
         QString ceroDos = "O";
         ui->posCeroDos->setText(ceroDos);
         tablero.setJugador1(true);
@@ -74,14 +73,14 @@ void MainWindow::on_posCeroDos_clicked()
 void MainWindow::on_posUnoCero_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(1,0,'X');
+        tablero.setPos(3,-1);
         QString unoCero = "X";
         ui->posUnoCero->setText(unoCero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(1,0,'O');
+        tablero.setPos(3,1);
         QString unoCero = "O";
         ui->posUnoCero->setText(unoCero);
         tablero.setJugador1(true);
@@ -92,14 +91,14 @@ void MainWindow::on_posUnoCero_clicked()
 void MainWindow::on_posUnoUno_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(1,1,'X');
+        tablero.setPos(4,-1);
         QString cerocero = "X";
         ui->posUnoUno->setText(cerocero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(1,1,'O');
+        tablero.setPos(4,1);
         QString cerocero = "O";
         ui->posUnoUno->setText(cerocero);
         tablero.setJugador1(true);
@@ -109,16 +108,15 @@ void MainWindow::on_posUnoUno_clicked()
 
 void MainWindow::on_posUnoDos_clicked()
 {
-    tablero.setPos(1,2);
     if(tablero.getJugador1Turno()){
-        tablero.setPos(1,2,'X');
+        tablero.setPos(5,-1);
         QString cerocero = "X";
         ui->posUnoDos->setText(cerocero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(1,2,'O');
+        tablero.setPos(5,1);
         QString cerocero = "O";
         ui->posUnoDos->setText(cerocero);
         tablero.setJugador1(true);
@@ -129,14 +127,14 @@ void MainWindow::on_posUnoDos_clicked()
 void MainWindow::on_posDosCero_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(2,0,'X');
+        tablero.setPos(6,-1);
         QString cerocero = "X";
         ui->posDosCero->setText(cerocero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(2,0,'O');
+        tablero.setPos(6,1);
         QString cerocero = "O";
         ui->posDosCero->setText(cerocero);
         tablero.setJugador1(true);
@@ -147,14 +145,14 @@ void MainWindow::on_posDosCero_clicked()
 void MainWindow::on_posDosUno_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(2,1,'X');
+        tablero.setPos(7,-1);
         QString cerocero = "X";
         ui->posDosUno->setText(cerocero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(2,1,'O');
+        tablero.setPos(7,1);
         QString cerocero = "O";
         ui->posDosUno->setText(cerocero);
         tablero.setJugador1(true);
@@ -165,14 +163,14 @@ void MainWindow::on_posDosUno_clicked()
 void MainWindow::on_posDosDos_clicked()
 {
     if(tablero.getJugador1Turno()){
-        tablero.setPos(2,2,'X');
+        tablero.setPos(8,-1);
         QString cerocero = "X";
         ui->posDosDos->setText(cerocero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
     }
     else if(tablero.getJugador2Turno()){
-        tablero.setPos(2,2,'O');
+        tablero.setPos(8,1);
         QString cerocero = "O";
         ui->posDosDos->setText(cerocero);
         tablero.setJugador1(true);
@@ -188,73 +186,52 @@ void MainWindow::on_iniciarButton_clicked()
     tablero.setJugador2Figura('O');
 }
 
-
 void MainWindow::on_pushButton_clicked()
 {
-    if(tablero.getJugador1Turno()){
-        if(tablero.isLlenoDiagonal(tablero.getJugador1()))  //'X' provicional
-        {
-            cout<<"Gana Diagonal"<<endl;
-        }
-        else if(tablero.isLlenoHorizontal(tablero.getJugador1()))
-        {
-            cout<<"Gana Horizontal"<<endl;
-        }
-        else if(tablero.isLlenoVertical(tablero.getJugador1()))
-        {
-            cout<<"Gana Vertical"<<endl;
-        }
-    }
-    else if(tablero.getJugador2Turno()){
-        if(tablero.isLlenoDiagonal(tablero.getJugador2()))  //'X' provicional
-        {
-            cout<<"Gana Diagonal"<<endl;
-        }
-        else if(tablero.isLlenoHorizontal(tablero.getJugador2()))
-        {
-            cout<<"Gana Horizontal"<<endl;
-        }
-        else if(tablero.isLlenoVertical(tablero.getJugador2()))
-        {
-            cout<<"Gana Vertical"<<endl;
-        }
-    }
 
 }
 
 void MainWindow::on_radioButton_clicked()
 {
-    if(!tablero.getVsCPU()){
-        tablero.setVsCPU(true);
-    }
-    else{
-        tablero.setVsCPU(false);
-    }
+
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    tablero.movimientoComputador(tablero.getJugador2());
-    int pos1 = tablero.getMovimientoComputador(0);
-    int pos2 = tablero.getMovimientoComputador(1);
-    if(pos1 == 0 && pos2 == 0)
-        on_posCeroCero_clicked();
-    else if(pos1 == 0 && pos2 == 1)
-        on_posCeroUno_clicked();
-    else if(pos1 == 0 && pos2 == 2)
-        on_posCeroDos_clicked();
-    else if(pos1 == 1 && pos2 == 0)
-        on_posUnoCero_clicked();
-    else if(pos1 == 1 && pos2 == 1)
-        on_posUnoUno_clicked();
-    else if(pos1 == 1 && pos2 == 2)
-        on_posUnoDos_clicked();
-    else if(pos1 == 2 && pos2 == 0)
-        on_posDosCero_clicked();
-    else if(pos1 == 2 && pos2 == 1)
-        on_posDosUno_clicked();
-    else if(pos1 == 2 && pos2 == 2)
-        on_posDosDos_clicked();
+    if(tablero.revisarGanador()==0){
+                    int k;
+                    k=tablero.computadoraMueve();
+                    tablero.setPos(k,1);
+                    if(k == 0){
+                        on_posCeroCero_clicked();
+                    }
+                    else if(k == 1){
+                        on_posCeroUno_clicked();
+                    }
+                    else if(k == 2){
+                        on_posCeroDos_clicked();
+                    }
+                    else if(k == 3){
+                        on_posUnoCero_clicked();
+                    }
+                    else if(k == 4){
+                        on_posUnoUno_clicked();
+                    }
+                    else if(k == 5){
+                        on_posUnoDos_clicked();
+                    }
+                    else if(k == 6){
+                        on_posDosCero_clicked();
+                    }
+                    else if(k == 7){
+                        on_posDosUno_clicked();
+                    }
+                    else if(k == 8){
+                        on_posDosDos_clicked();
+                    }
 
-    //tablero.setPos(pos1,pos2,tablero.getJugador2());
+                    if (tablero.revisarGanador() != 0){
+                        cout<<"Ganó computadora";
+                    }
+                }
 }
