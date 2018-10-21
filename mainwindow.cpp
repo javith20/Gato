@@ -199,10 +199,16 @@ void MainWindow::on_posDosDos_clicked()
 
 void MainWindow::on_iniciarButton_clicked()
 {
-    if(tablero.getVsCPU()){
+    if(tablero.getVsCPU() && tablero.getJugador1VsMaquinaSeleccionado()){
         on_pushButton_2_clicked();
     }
-    tablero.setJugador1(true); //Por default está escogiendo al jugador 1
+    else if(tablero.getVsCPU() && tablero.getJugador2VsMaquinaSeleccionado()){
+        on_pushButton_2_clicked();
+    }
+    else if(tablero.getVsCPU() && (!tablero.getJugador1VsMaquinaSeleccionado() && !tablero.getJugador2VsMaquinaSeleccionado())){
+        QMessageBox::information(this, tr("Error"),tr("No se ha seleccionado jugador vs PC"));
+    }
+    tablero.setJugador1(true);
     tablero.setJugador2(false);
     tablero.setJugador1Figura('X');
     tablero.setJugador2Figura('O');
@@ -265,12 +271,23 @@ void MainWindow::on_pushButton_2_clicked()
 
 
 
-void MainWindow::on_radioButton_2_clicked()
+void MainWindow::on_radioButton_2_clicked(bool checked)
 {
-
+  if(!tablero.getJugador2VsMaquinaSeleccionado() && checked)
+  {
+      tablero.setJugador1VsMaquinaSeleccionado(true);
+      ui->radioButton_3->setDisabled(true);
+  }
+  else
+      ui->radioButton_3->setEnabled(true);
 }
 
-void MainWindow::on_radioButton_3_clicked()
+void MainWindow::on_radioButton_3_clicked(bool checked)
 {
-
+   if(!tablero.getJugador1VsMaquinaSeleccionado()){
+       tablero.setJugador2VsMaquinaSeleccionado(true);
+       ui->radioButton_2->setDisabled(true);
+   }
+   else
+       ui->radioButton_3->setEnabled(true);
 }

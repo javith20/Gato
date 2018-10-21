@@ -82,6 +82,22 @@ bool Gato::getJugador2Turno(){
     return this->jugador2.turno;
 }
 
+bool Gato::getJugador1VsMaquinaSeleccionado(){
+    return this->jugador1VsMaquinaSeleccionado;
+}
+
+bool Gato::setJugador1VsMaquinaSeleccionado(bool estado){
+    this->jugador1VsMaquinaSeleccionado = estado;
+}
+
+bool Gato::getJugador2VsMaquinaSeleccionado(){
+    return this->jugador2VsMaquinaSeleccionado;
+}
+
+bool Gato::setJugador2VsMaquinaSeleccionado(bool estado){
+    this->jugador2VsMaquinaSeleccionado = estado;
+}
+
 char Gato::getJugadorEnTurnoAnterior(){
     if(!this->jugador1.turno)
         return this->jugador1.simbolo;
