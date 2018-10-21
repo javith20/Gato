@@ -8,11 +8,15 @@ Gato::Gato()
 
 int Gato::revisarGanador() {
     unsigned gana[8][3] = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
-    int i;
-    for(i = 0; i < 8; ++i) {
+    int contadorEspaciosLlenos, i;
+    for(i = 0; i < 8; ++i)
         if(tablero[gana[i][0]] != 0 && tablero[gana[i][0]] == tablero[gana[i][1]] && tablero[gana[i][1]] == tablero[gana[i][2]])
             return tablero[gana[i][2]];
-    }
+        if(tablero[i] != 0)
+            contadorEspaciosLlenos++;
+    if(contadorEspaciosLlenos == 9)
+        return 2;  //Se retorna 2 si hay empate
+
     return 0;  //Se retorna 0 si no ha ganado nadie
 }
 
@@ -31,7 +35,7 @@ int Gato::minimax( int player) {
                 puntaje = estePuntaje;
                 movimiento = i;
             }
-            //Se reinicia el vector, para que no quede el movimiento colocado
+            //Se reinicia el vector, para que no quede el movimiento de prueba colocado
             tablero[i] = 0;
         }
     }

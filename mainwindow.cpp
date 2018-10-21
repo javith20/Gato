@@ -33,8 +33,10 @@ void MainWindow::on_posCeroCero_clicked()
         tablero.setJugador2(false);
         tablero.setJugador1(true);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posCeroUno_clicked()
@@ -53,8 +55,10 @@ void MainWindow::on_posCeroUno_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posCeroDos_clicked()
@@ -73,8 +77,10 @@ void MainWindow::on_posCeroDos_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posUnoCero_clicked()
@@ -93,8 +99,10 @@ void MainWindow::on_posUnoCero_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posUnoUno_clicked()
@@ -113,8 +121,10 @@ void MainWindow::on_posUnoUno_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posUnoDos_clicked()
@@ -133,8 +143,10 @@ void MainWindow::on_posUnoDos_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posDosCero_clicked()
@@ -153,8 +165,10 @@ void MainWindow::on_posDosCero_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posDosUno_clicked()
@@ -173,8 +187,10 @@ void MainWindow::on_posDosUno_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_posDosDos_clicked()
@@ -193,8 +209,10 @@ void MainWindow::on_posDosDos_clicked()
         tablero.setJugador1(true);
         tablero.setJugador2(false);
     }
-    if (tablero.revisarGanador() != 0)
-        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado "+tablero.getJugadorEnTurnoAnterior()));
+    if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
+    else if (tablero.revisarGanador() == 2)
+        QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
 }
 
 void MainWindow::on_iniciarButton_clicked()
@@ -230,36 +248,40 @@ void MainWindow::on_pushButton_2_clicked()
             int k;
             k=tablero.computadoraMueve();
             tablero.setPos(k,1);
-            if(k == 0)
+            switch(k){
+            case 0:
                 on_posCeroCero_clicked();
-
-            else if(k == 1)
+                break;
+            case 1:
                 on_posCeroUno_clicked();
-
-            else if(k == 2)
+                break;
+            case 2:
                 on_posCeroDos_clicked();
-
-            else if(k == 3)
+                break;
+            case 3:
                 on_posUnoCero_clicked();
-
-            else if(k == 4)
+                break;
+            case 4:
                 on_posUnoUno_clicked();
-
-            else if(k == 5)
+                break;
+            case 5:
                 on_posUnoDos_clicked();
-
-            else if(k == 6)
+                break;
+            case 6:
                 on_posDosCero_clicked();
-
-            else if(k == 7)
+                break;
+            case 7:
                 on_posDosUno_clicked();
-
-            else if(k == 8)
+                break;
+            case 8:
                 on_posDosDos_clicked();
+                break;
+            }
 
-
-            if (tablero.revisarGanador() != 0)
-                QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado la computadora"));
+            if (tablero.revisarGanador() != 0 && tablero.revisarGanador() != 2)
+                QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado la PC"));
+            else if (tablero.revisarGanador() == 2)
+                QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
         }
     }
 }
