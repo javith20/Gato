@@ -18,7 +18,6 @@ int Gato::revisarGanador() {
             contadorEspaciosLlenos++;
     if(contadorEspaciosLlenos == 9)
         return 2;  //Se retorna 2 si hay empate
-
     return 0;  //Se retorna 0 si no ha ganado nadie
 }
 
@@ -67,7 +66,7 @@ int Gato::computadoraMueve() {
 void Gato::limpiarTablero(){
     int i;
     for(i = 0; i > 8; i++){
-        tablero[i] = 0;
+        this->tablero[i] = -1;
     }
 }
 

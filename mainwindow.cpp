@@ -292,7 +292,6 @@ void MainWindow::on_posDosDos_clicked()
 void MainWindow::on_iniciarButton_clicked()
 {
     if(tablero.getVsCPU() && tablero.getJugador1VsMaquinaSeleccionado()){
-        //on_pushButton_2_clicked();
         tablero.setJugador1(true);
         tablero.setJugador2(false);
         tablero.setJugador1Figura('X');
@@ -300,8 +299,8 @@ void MainWindow::on_iniciarButton_clicked()
     }
     else if(tablero.getVsCPU() && tablero.getJugador2VsMaquinaSeleccionado())
     {
-        tablero.setJugador1(true);
-        tablero.setJugador2(false);
+        tablero.setJugador1(false);
+        tablero.setJugador2(true);
         tablero.setJugador1Figura('X');
         tablero.setJugador2Figura('O');
         on_pushButton_2_clicked();
@@ -396,9 +395,11 @@ void MainWindow::on_pushButton_clicked()
     tablero.setJugador1(false);
     tablero.setJugador2(false);
     tablero.setVsCPU(false);
+    tablero.setTurnoDeLaPC(true);
+    tablero.limpiarTablero();
     ui->radioButton_2->setDisabled(true);
     ui->radioButton_2->setDisabled(true);
-    QString anular = " ";
+    QString anular = "";
     ui->posCeroCero->setText(anular);
     ui->posCeroUno->setText(anular);
     ui->posCeroDos->setText(anular);
