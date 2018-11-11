@@ -64,12 +64,9 @@ int Gato::computadoraMueve() {
 }
 
 void Gato::limpiarTablero(){
-    int i;
-    for(i = 0; i > 8; i++){
-        this->tablero[i] = -1;
-    }
+    int tableroLimpio[9] = {0};
+    tablero[9] = tableroLimpio[9];
 }
-
 
 char Gato::getPos(){
     return 'c';

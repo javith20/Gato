@@ -405,9 +405,9 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>380</x>
       <y>470</y>
-      <width>16</width>
+      <width>21</width>
       <height>16</height>
      </rect>
     </property>
@@ -462,7 +462,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>370</x>
       <y>450</y>
       <width>47</width>
       <height>13</height>
@@ -475,7 +475,7 @@
      </font>
     </property>
     <property name="text">
-     <string>PC</string>
+     <string>Manual</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">

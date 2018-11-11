@@ -392,21 +392,23 @@ void MainWindow::on_radioButton_3_clicked(bool checked)
 void MainWindow::on_pushButton_clicked()
 {
     tablero.limpiarTablero();
+
     tablero.setJugador1(false);
     tablero.setJugador2(false);
+
     tablero.setVsCPU(false);
     tablero.setTurnoDeLaPC(true);
-    tablero.limpiarTablero();
+
     ui->radioButton_2->setDisabled(true);
     ui->radioButton_2->setDisabled(true);
-    QString anular = "";
-    ui->posCeroCero->setText(anular);
-    ui->posCeroUno->setText(anular);
-    ui->posCeroDos->setText(anular);
-    ui->posUnoCero->setText(anular);
-    ui->posUnoUno->setText(anular);
-    ui->posUnoDos->setText(anular);
-    ui->posDosCero->setText(anular);
-    ui->posDosUno->setText(anular);
-    ui->posDosDos->setText(anular);
+
+    ui->posCeroCero->setText(NULL);
+    ui->posCeroUno->setText(NULL);
+    ui->posCeroDos->setText(NULL);
+    ui->posUnoCero->setText(NULL);
+    ui->posUnoUno->setText(NULL);
+    ui->posUnoDos->setText(NULL);
+    ui->posDosCero->setText(NULL);
+    ui->posDosUno->setText(NULL);
+    ui->posDosDos->setText(NULL);
 }
