@@ -18,15 +18,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_posCeroCero_clicked()
 {
-    if(tablero.getJugador1Turno()){
+    if(tablero.getJugador1Turno())
+    {
         tablero.setPos(0,-1);
         QString ceroCero = "X";
         ui->posCeroCero->setText(ceroCero);
         tablero.setJugador1(false);
         tablero.setJugador2(true);
-        //ui->posCeroCero->setDisabled();
+
     }
-    else if(tablero.getJugador2Turno()){
+    else if(tablero.getJugador2Turno())
+    {
         tablero.setPos(0,1);
         QString ceroCero = "O";
         ui->posCeroCero->setText(ceroCero);
@@ -37,6 +39,14 @@ void MainWindow::on_posCeroCero_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posCeroUno_clicked()
@@ -59,6 +69,14 @@ void MainWindow::on_posCeroUno_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posCeroDos_clicked()
@@ -81,6 +99,14 @@ void MainWindow::on_posCeroDos_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posUnoCero_clicked()
@@ -103,6 +129,14 @@ void MainWindow::on_posUnoCero_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posUnoUno_clicked()
@@ -125,6 +159,14 @@ void MainWindow::on_posUnoUno_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posUnoDos_clicked()
@@ -147,6 +189,14 @@ void MainWindow::on_posUnoDos_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posDosCero_clicked()
@@ -169,6 +219,14 @@ void MainWindow::on_posDosCero_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posDosUno_clicked()
@@ -191,6 +249,14 @@ void MainWindow::on_posDosUno_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_posDosDos_clicked()
@@ -213,23 +279,37 @@ void MainWindow::on_posDosDos_clicked()
         QMessageBox::information(this, tr("Juego terminado"),tr("Ha ganado"));
     else if (tablero.revisarGanador() == 2)
         QMessageBox::information(this, tr("Juego terminado"),tr("Es un empate"));
+    if(tablero.getTurnoDeLaPC() && tablero.getVsCPU())
+    {
+        on_pushButton_2_clicked();
+    }
+    else
+    {
+        tablero.setTurnoDeLaPC(true);
+    }
 }
 
 void MainWindow::on_iniciarButton_clicked()
 {
     if(tablero.getVsCPU() && tablero.getJugador1VsMaquinaSeleccionado()){
+        //on_pushButton_2_clicked();
+        tablero.setJugador1(true);
+        tablero.setJugador2(false);
+        tablero.setJugador1Figura('X');
+        tablero.setJugador2Figura('O');
+    }
+    else if(tablero.getVsCPU() && tablero.getJugador2VsMaquinaSeleccionado())
+    {
+        tablero.setJugador1(true);
+        tablero.setJugador2(false);
+        tablero.setJugador1Figura('X');
+        tablero.setJugador2Figura('O');
         on_pushButton_2_clicked();
     }
-    else if(tablero.getVsCPU() && tablero.getJugador2VsMaquinaSeleccionado()){
-        on_pushButton_2_clicked();
-    }
-    else if(tablero.getVsCPU() && (!tablero.getJugador1VsMaquinaSeleccionado() && !tablero.getJugador2VsMaquinaSeleccionado())){
+    else if(tablero.getVsCPU() && (!tablero.getJugador1VsMaquinaSeleccionado() && !tablero.getJugador2VsMaquinaSeleccionado()))
+    {
         QMessageBox::information(this, tr("Error"),tr("No se ha seleccionado jugador vs PC"));
     }
-    tablero.setJugador1(true);
-    tablero.setJugador2(false);
-    tablero.setJugador1Figura('X');
-    tablero.setJugador2Figura('O');
 }
 
 void MainWindow::on_radioButton_clicked()
@@ -248,6 +328,7 @@ void MainWindow::on_pushButton_2_clicked()
             int k;
             k=tablero.computadoraMueve();
             tablero.setPos(k,1);
+            tablero.setTurnoDeLaPC(false);
             switch(k){
             case 0:
                 on_posCeroCero_clicked();
@@ -307,4 +388,24 @@ void MainWindow::on_radioButton_3_clicked(bool checked)
    }
    else
        ui->radioButton_3->setEnabled(true);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    tablero.limpiarTablero();
+    tablero.setJugador1(false);
+    tablero.setJugador2(false);
+    tablero.setVsCPU(false);
+    ui->radioButton_2->setDisabled(true);
+    ui->radioButton_2->setDisabled(true);
+    QString anular = " ";
+    ui->posCeroCero->setText(anular);
+    ui->posCeroUno->setText(anular);
+    ui->posCeroDos->setText(anular);
+    ui->posUnoCero->setText(anular);
+    ui->posUnoUno->setText(anular);
+    ui->posUnoDos->setText(anular);
+    ui->posDosCero->setText(anular);
+    ui->posDosUno->setText(anular);
+    ui->posDosDos->setText(anular);
 }

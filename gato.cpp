@@ -1,6 +1,8 @@
 #include "gato.h"
 using namespace  std;
 
+//Código fuertemente influenciado, algoritmo minimax extraído y modificado de: https://gist.github.com/amul-mehta/9ad947f41067cdbe2556
+
 Gato::Gato()
 {
 
@@ -61,6 +63,14 @@ int Gato::computadoraMueve() {
     }
     return movimiento;   //Al recorrer todo el árbol minimax, logramos devolver un movimiento basado en los puntajes
 }
+
+void Gato::limpiarTablero(){
+    int i;
+    for(i = 0; i > 8; i++){
+        tablero[i] = 0;
+    }
+}
+
 
 char Gato::getPos(){
     return 'c';
@@ -133,3 +143,12 @@ bool Gato::getVsCPU(){
 void Gato::setVsCPU(bool estado){
     this->VsCPU = estado;
 }
+
+bool Gato::getTurnoDeLaPC(){
+    return this->turnoCPU;
+}
+
+void Gato::setTurnoDeLaPC(bool estado){
+    this->turnoCPU = estado;
+}
+

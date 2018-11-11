@@ -16,6 +16,8 @@ public:
     int minimax( int player);
     int computadoraMueve();
 
+    void limpiarTablero();
+
     char getPos();
     void setPos(int pos, int figura);
 
@@ -42,13 +44,18 @@ public:
     bool getVsCPU();
     void setVsCPU(bool estado);
 
+    bool getTurnoDeLaPC();
+    void setTurnoDeLaPC(bool estado);
+
 
 private:
     int movimientoPC[2]={0,0};
     int tablero[9]={0};
     bool VsCPU = false;
+    bool turnoCPU = true;
     bool jugador1VsMaquinaSeleccionado = false;
     bool jugador2VsMaquinaSeleccionado = false;
+    bool limpiarBool;
 };
 
 
