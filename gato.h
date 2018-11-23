@@ -28,10 +28,10 @@ public:
     bool getJugador2Turno();
 
     bool getJugador1VsMaquinaSeleccionado();
-    bool setJugador1VsMaquinaSeleccionado(bool estado);
+    void setJugador1VsMaquinaSeleccionado(bool estado);
 
     bool getJugador2VsMaquinaSeleccionado();
-    bool setJugador2VsMaquinaSeleccionado(bool estado);
+    void setJugador2VsMaquinaSeleccionado(bool estado);
 
     char getJugadorEnTurnoAnterior();
 

@@ -8,9 +8,10 @@ Gato::Gato()
 
 }
 
-int Gato::revisarGanador() {
+int Gato::revisarGanador()
+{
     unsigned gana[8][3] = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
-    int contadorEspaciosLlenos, i;
+    int contadorEspaciosLlenos = 0, i;
     for(i = 0; i < 8; ++i)
         if(tablero[gana[i][0]] != 0 && tablero[gana[i][0]] == tablero[gana[i][1]] && tablero[gana[i][1]] == tablero[gana[i][2]])
             return tablero[gana[i][2]];
@@ -21,7 +22,8 @@ int Gato::revisarGanador() {
     return 0;  //Se retorna 0 si no ha ganado nadie
 }
 
-int Gato::minimax( int player) {
+int Gato::minimax( int player)
+{
     int ganador = revisarGanador();
     if(ganador != 0)
         return ganador*player;
@@ -41,8 +43,7 @@ int Gato::minimax( int player) {
         }
     }
     if(movimiento == -1)
-     return 0;
-
+        return 0;
     return puntaje;
 }
 
@@ -96,7 +97,7 @@ bool Gato::getJugador1VsMaquinaSeleccionado(){
     return this->jugador1VsMaquinaSeleccionado;
 }
 
-bool Gato::setJugador1VsMaquinaSeleccionado(bool estado){
+void Gato::setJugador1VsMaquinaSeleccionado(bool estado){
     this->jugador1VsMaquinaSeleccionado = estado;
 }
 
@@ -104,15 +105,15 @@ bool Gato::getJugador2VsMaquinaSeleccionado(){
     return this->jugador2VsMaquinaSeleccionado;
 }
 
-bool Gato::setJugador2VsMaquinaSeleccionado(bool estado){
+void Gato::setJugador2VsMaquinaSeleccionado(bool estado){
     this->jugador2VsMaquinaSeleccionado = estado;
 }
 
 char Gato::getJugadorEnTurnoAnterior(){
     if(!this->jugador1.turno)
         return this->jugador1.simbolo;
-    else if(!this->jugador2.turno)
-        return this->jugador2.simbolo;
+    return this->jugador2.simbolo;
+
 }
 
 
