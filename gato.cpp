@@ -15,7 +15,7 @@ int Gato::revisarGanador()
     for(i = 0; i < 8; ++i)
         if(tablero[gana[i][0]] != 0 && tablero[gana[i][0]] == tablero[gana[i][1]] && tablero[gana[i][1]] == tablero[gana[i][2]])
             return tablero[gana[i][2]];
-        if(tablero[i] != 0)
+        else if(tablero[i] != 0)
             contadorEspaciosLlenos++;
     if(contadorEspaciosLlenos == 9)
         return 2;  //Se retorna 2 si hay empate
